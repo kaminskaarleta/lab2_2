@@ -47,4 +47,26 @@ public class MoneyTest {
 		assertThat(money.multiplyBy(number), is(not (new Money(expected, "EUR"))));		
 	}
 	
+	@Test
+	public void addMoney_shouldBeTrue() {
+		Money money1 = new Money(5.00, "PLN");
+		Money money2 = new Money(1.00, "PLN");
+		Money expected = new Money(6.00, "PLN");
+		
+		assertThat(money1.add(money2), is(expected));		
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void addMoneyWrongCurrency_shouldBeException() {
+		Money money1 = new Money(5.00, "PLN");
+		Money money2 = new Money(1.00, "EUR");
+		money1.add(money2);		
+	}
+	
+
+	
+	
+	
+	
+	
 }
