@@ -64,6 +64,22 @@ public class MoneyTest {
 	}
 	
 
+	@Test
+	public void subtractMoney_shouldBeTrue() {
+		Money money1 = new Money(5.00, "PLN");
+		Money money2 = new Money(0.00, "PLN");
+		Money expected = new Money(5.00, "PLN");
+		
+		assertThat(money1.add(money2), is(expected));		
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void subtractMoneyWrongCurrency_shouldBeException() {
+		Money money1 = new Money(1.00, "PLN");
+		Money money2 = new Money(2.00, "EUR");
+		money1.add(money2);		
+	}
+	
 	
 	
 	
