@@ -80,9 +80,23 @@ public class MoneyTest {
 		money1.add(money2);		
 	}
 	
+	@Test
+	public void greaterThan_shouldBeTrue(){
+		Money money1 = new Money(2.50, "PLN");
+		Money money2 = new Money(0.00, "PLN");
+		boolean excepted = true;
+		
+		assertThat(money1.greaterThan(money2), is(excepted));
+	}
 	
-	
-	
+	@Test
+	public void greaterThan_shouldBeFalse(){
+		Money money1 = new Money(2.50, "PLN");
+		Money money2 = new Money(2.50, "PLN");
+		boolean excepted = false;
+		
+		assertThat(money1.greaterThan(money2), is(excepted));
+	}
 	
 	
 }
