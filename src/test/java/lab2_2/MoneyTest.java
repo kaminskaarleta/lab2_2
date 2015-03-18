@@ -98,5 +98,21 @@ public class MoneyTest {
 		assertThat(money1.greaterThan(money2), is(excepted));
 	}
 	
+	@Test
+	public void lessThan_shouldBeTrue(){
+		Money money1 = new Money(2.50, "PLN");
+		Money money2 = new Money(5.00, "PLN");
+		boolean excepted = true;
+		
+		assertThat(money1.lessThan(money2), is(excepted));
+	}
 	
+	@Test
+	public void lessThan_shouldBeFalse(){
+		Money money1 = new Money(2.50, "PLN");
+		Money money2 = new Money(2.50, "PLN");
+		boolean excepted = false;
+		
+		assertThat(money1.lessThan(money2), is(excepted));
+	}
 }
