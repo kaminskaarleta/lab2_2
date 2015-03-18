@@ -17,7 +17,8 @@ package pl.com.bottega.ecommerce.sales.domain.invoicing;
 
 import pl.com.bottega.ecommerce.sharedkernel.Money;
 
-public class Tax {
+//powinnismy zaimplementowaæ interfejs TaxPolicy
+public class Tax{
 
 	private Money amount;
 

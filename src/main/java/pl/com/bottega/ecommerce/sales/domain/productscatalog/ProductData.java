@@ -22,6 +22,7 @@ import java.util.Date;
 import pl.com.bottega.ecommerce.canonicalmodel.publishedlanguage.Id;
 import pl.com.bottega.ecommerce.sharedkernel.Money;
 
+//brak fabryki albo konstruktora publicznego do tego typu danych wiec nie mo¿na stworzyc jego obiektu poza pakietem
 public class ProductData {
 	private Id productId;
 	private Money price;
